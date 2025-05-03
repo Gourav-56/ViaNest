@@ -1,0 +1,123 @@
+:root {
+  --primary-color: #222222;
+  --highlight-color: #ff5a5f;
+}
+
+body {
+  font-family: "Spinnaker", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  flex: 1;
+}
+
+.navbar {
+  min-height: 5rem;
+}
+
+.fa-compass {
+  color: var(--highlight-color);
+  font-size: 2rem;
+}
+
+.nav-link {
+  color: var(--primary-color);
+  position: relative;
+  display: inline-block;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background-color: var(--primary-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+.f-info {
+  height: 8rem;
+  color: var(--primary-color);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #eae5e5;
+}
+
+.f-info-links a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.f-info-socials a i {
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  transition: transform 0.3s ease;
+  color: var(--primary-color);
+}
+
+.f-info-socials i:hover {
+  transform: scale(1.1);
+}
+
+.f-info-socials,
+.f-info-brand,
+.f-info-links {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+}
+
+@media (max-width: 600px) {
+  .f-info {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem 0;
+  }
+}
+
+.card {
+  border: none;
+  margin-bottom: 2rem;
+}
+
+.card-img-top {
+  border-radius: 0.5rem;
+}
+
+.card-body p {
+  color: var(--primary-color);
+}
+
+.card-body {
+  padding: 0;
+}
+
+.card-text span {
+  font-weight: 600;
+}
+
+.listing-link {
+  text-decoration: none;
+}
+
+.btn-add {
+  border: none;
+  background-color: var(--highlight-color);
+}
